@@ -1,0 +1,38 @@
+/* popup-style.css */
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.content {
+  display: none;
+  text-align: center;
+  width: 200px;
+  padding: 20px;
+}
+
+.prompt {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+input {
+  font-size: 14px;
+  padding: 5px;
+  width: 100%;
+}
+
+#work-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#work-timer,
+#rest-timer {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+#end-block-title {
+  font-size: 20px;
+}

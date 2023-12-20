@@ -1,0 +1,34 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup-style.css">
+  <title>Pomodoro Timer</title>
+</head>
+<body>
+  <div class="content" id="goal-screen">
+    <div class="prompt">What is your goal for this work block?</div>
+    <input type="text" id="goal-input" placeholder="Type and press Enter">
+  </div>
+  <div class="content" id="task-screen">
+    <div class="prompt">What will you do in this session?</div>
+    <input type="text" id="task-input" placeholder="Type and press Enter">
+  </div>
+  <div class="content" id="work-screen">
+    <div class="prompt" id="work-description"></div>
+    <div class="prompt">WORK</div>
+    <div id="work-timer"></div>
+  </div>
+  <div class="content" id="rest-screen">
+    <div class="prompt">REST</div>
+    <div id="rest-timer"></div>
+  </div>
+  <div class="content" id="end-screen">
+    <div class="prompt" id="end-block-title">END OF WORK BLOCK</div>
+    <div id="summary"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
