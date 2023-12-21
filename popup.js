@@ -46,7 +46,8 @@ function handleInput(input) {
       workScreen.style.display = 'block';
       state = 'work';
       workDescription.innerText = `Task: ${input}`;
-      startTimer(5, 'work'); // Shortened for testing (5 seconds)
+      startTimer(1500, 'work'); // Shortened for testing (5 seconds)
+      taskInput.value = ''; // Clear the task input field
       break;
 
     case 'work':
@@ -55,7 +56,8 @@ function handleInput(input) {
       restScreen.style.display = 'block';
       state = 'rest';
       taskSummary.push(input);
-      startTimer(2, 'rest'); // Shortened for testing (2 seconds)
+      startTimer(300, 'rest'); // Shortened for testing (2 seconds)
+      taskInput.value = ''; // Clear the task input field
       break;
 
     case 'rest':
@@ -64,6 +66,7 @@ function handleInput(input) {
       state = 'task';
 
       if (workSessionCount === 4) {
+        taskScreen.style.display = 'none';
         showEndBlock();
       }
       break;
@@ -100,9 +103,9 @@ function startTimer(durationInSeconds, timerType) {
 
 function updateTimerDisplay(timerType) {
   if (timerType === 'work') {
-    workTimer.innerText = `Work: ${formatTime(timerDisplay)}`;
+    workTimer.innerText = `${formatTime(timerDisplay)}`;
   } else if (timerType === 'rest') {
-    restTimer.innerText = `Rest: ${formatTime(timerDisplay)}`;
+    restTimer.innerText = `${formatTime(timerDisplay)}`;
   }
 }
 
@@ -112,12 +115,14 @@ function formatTime(seconds) {
   return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 }
 
+
 // Show end block function
 function showEndBlock() {
   endScreen.style.display = 'block';
   endBlockTitle.innerText = 'END OF WORK BLOCK';
-  summaryDiv.innerText = `Tasks Completed:\n\n${taskSummary.join('\n')}`;
 }
 
 // Initial display
 goalScreen.style.display = 'block';
+
+
